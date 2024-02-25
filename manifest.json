@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "Aether Listner",
+    "version": "1.0",
+    "description": "This extension is to test event listner in extension.",
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "logo.png"
+    },
+    "permissions": ["activeTab", "tabs"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+          "js": ["content.js"],
+          "matches": ["http://*/*", "https://*/*", "http://localhost:4200/*", "https://timetracker.aetherti.com/*"]
+        }
+    ],
+    "host_permissions": ["http://*/*", "https://*/*", "http://localhost:4200/*", "https://timetracker.aetherti.com/*"]
+}
